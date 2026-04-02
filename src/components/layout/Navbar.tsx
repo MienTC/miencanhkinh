@@ -20,9 +20,7 @@ const Navbar: React.FC<NavbarProps> = ({ onHomeClick }) => {
 
   const navLinks: NavLinkType[] = [
     { name: 'Trang chủ', href: '#home', isHome: true },
-    { name: 'Giới thiệu', href: '#about' },
     { name: 'Sản phẩm', href: '#products' },
-    { name: 'Tư vấn', href: '#quote' },
     { name: 'Liên hệ', href: '#contact' },
   ];
 
@@ -36,8 +34,8 @@ const Navbar: React.FC<NavbarProps> = ({ onHomeClick }) => {
     <header className="fixed w-full z-50 transition-all duration-500 font-sans">
       <nav className={`bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-500 ${isScrolled ? 'py-3 shadow-md' : 'py-6'}`}>
         <div className="container mx-auto px-6 flex items-center justify-between">
-          <div 
-            className="flex items-center gap-4 cursor-pointer group" 
+          <div
+            className="flex items-center gap-4 cursor-pointer group"
             onClick={handleHomeClick}
           >
             <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-100 shadow-sm group-hover:scale-105 transition-transform">
@@ -77,9 +75,9 @@ const Navbar: React.FC<NavbarProps> = ({ onHomeClick }) => {
         <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-2xl border-t p-8 animate-fade-in divide-y divide-gray-100">
           <div className="flex flex-col gap-6 pb-6">
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.href} 
+              <a
+                key={link.name}
+                href={link.href}
                 onClick={(e) => {
                   if (link.isHome) {
                     e.preventDefault();

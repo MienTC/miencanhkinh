@@ -36,10 +36,6 @@ const Projects: React.FC = () => {
                            </p>
                         </div>
                      </div>
-
-                     <div className="absolute top-8 right-8 w-14 h-14 rounded-full bg-white/20 backdrop-blur-xl border border-white/30 flex items-center justify-center text-white scale-0 group-hover:scale-100 transition-transform duration-500 delay-100">
-                        <div className="w-6 h-[2px] bg-white relative rotate-45 after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-white after:rotate-90"></div>
-                     </div>
                   </div>
                ))}
             </div>
