@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #9B7F5E;
+  --color-secondary: #1A1A1A;
+  --color-accent: #D4AF37;
+  --color-luxury-dark: #121212;
+  --color-luxury-light: #F5F5F5;
+  
+  --font-display: "Josefin Sans", sans-serif;
+  --font-sans: "Josefin Sans", sans-serif;
+  
+  --animate-fade-in: fadeIn 0.5s ease-out forwards;
+  --animate-slide-up: slideUp 0.5s ease-out forwards;
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes slideUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-white text-secondary;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-white rounded-lg hover:bg-accent transition-all duration-300 transform active:scale-95 shadow-lg shadow-primary/20 flex items-center justify-center gap-2;
+  }
+  .btn-outline {
+    @apply px-6 py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary/10 transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2;
+  }
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+  .luxury-gradient {
+    @apply bg-gradient-to-br from-secondary via-[#2a2a2a] to-secondary;
+  }
+  .scrolling-header {
+    @apply bg-white/80 backdrop-blur-xl shadow-lg border-b border-white/10;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/40 rounded-full hover:bg-primary/60;
+}
