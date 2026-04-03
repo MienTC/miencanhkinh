@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Projects: React.FC = () => {
    const categories = [
-      { name: 'Cánh kính tủ áo', count: 124, img: '/img1.jpg' },
-      { name: 'Tủ bếp cánh kính', count: 86, img: '/img13.jpg' },
-      { name: 'Tủ rượu cánh kính', count: 42, img: '/img3.jpg' },
-      { name: 'Thùng tủ inox', count: 56, img: '/inox2.jpg' },
+      { name: 'Cánh kính tủ áo', count: 124, img: '/img1.jpg', slug: 'canh-kinh-tu-ao' },
+      { name: 'Tủ bếp cánh kính', count: 86, img: '/img13.jpg', slug: 'tu-bep-canh-kinh' },
+      { name: 'Tủ rượu cánh kính', count: 42, img: '/img3.jpg', slug: 'tu-ruou-canh-kinh' },
+      { name: 'Thùng tủ inox', count: 56, img: '/inox2.jpg', slug: 'thung-tu-inox' },
    ];
 
    return (
@@ -16,14 +17,14 @@ const Projects: React.FC = () => {
                   <h2 className="text-4xl md:text-5xl font-bold font-display text-secondary mb-8 leading-tight uppercase tracking-tight">Kinh nghiệm thực tế qua<br /><span className="text-primary italic">Hàng trăm</span> công trình</h2>
                   <p className="text-gray-500 font-medium">Chúng tôi đã hoàn thiện hàng trăm dự án trên khắp cả nước, mang lại vẻ đẹp đẳng cấp cho không gian sống của mỗi gia đình.</p>
                </div>
-               <a href="#contact" className="text-sm font-black text-primary border-b-2 border-primary/20 hover:border-primary transition-all pb-2 uppercase tracking-widest">
+               <Link to="/projects" className="text-sm font-black text-primary border-b-2 border-primary/20 hover:border-primary transition-all pb-2 uppercase tracking-widest">
                   Xem tất cả dự án
-               </a>
+               </Link>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                {categories.map((cat, idx) => (
-                  <div key={idx} className="group relative h-[500px] rounded-[40px] overflow-hidden cursor-pointer shadow-2xl transition-all duration-700 hover:-translate-y-4">
+                  <Link to={`/projects?category=${cat.slug}`} key={idx} className="group relative h-[500px] rounded-[40px] overflow-hidden cursor-pointer shadow-2xl transition-all duration-700 hover:-translate-y-4 block">
                      <img src={cat.img} alt={cat.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
                      <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/10 to-transparent group-hover:via-secondary/40 transition-all duration-300" />
 
@@ -36,7 +37,7 @@ const Projects: React.FC = () => {
                            </p>
                         </div>
                      </div>
-                  </div>
+                  </Link>
                ))}
             </div>
          </div>
